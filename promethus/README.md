@@ -1,8 +1,8 @@
 ##  Prometheus and Grafana on Openshift Origin
 
 ### Deploy Prometheus & Grafana
-```sh
-oc project openshift-infra   #choose a namespace
+`sh
+oc project openshift-infras   #choose a namespace
 oc adm policy add-cluster-role-to-user cluster-reader -z default  #for the default account give cluster wide read permission so prometheus can read metrics
 oc adm policy add-scc-to-user anyuid -z default   #damn!  allow containers with root USER will fix in future
 oc new-app grafana/grafana   #Deploy grafana
